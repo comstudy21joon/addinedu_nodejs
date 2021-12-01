@@ -17,7 +17,6 @@
             <th>NO</th>
             <th>NAME</th>
             <th>PRICE</th>
-            <th>COMPANY</th>
             <th>YEAR</th>
         </tr>
         <% for(var i=0; i<car_list.length; i++) { var car=car_list[i]; %>
@@ -26,13 +25,12 @@
                     <%=car.no%>
                 </td>
                 <td>
-                    <%=car.name%>
+                    <a href="/car_detail/<%=car.no%>?no=<%=car.no%>">
+                        <%=car.name%>
+                    </a>
                 </td>
                 <td>
                     <%=car.price%>
-                </td>
-                <td>
-                    <%=car.company%>
                 </td>
                 <td>
                     <%=car.year%>
@@ -40,6 +38,9 @@
             </tr>
             <% } %>
     </table>
+    <ul>
+        <li><a href="/car_input.html">정보입력</a></li>
+    </ul>
 </body>
 
 </html>
