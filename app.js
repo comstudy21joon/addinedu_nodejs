@@ -122,6 +122,15 @@ router.route("/car_modify").post((req, res) => {
   res.redirect("car_detail/" + req.body.no);
 });
 
+router.route("/car_delete/:no").get((req, res) => {
+  console.log("GET - /car_delete/" + req.params.no);
+  var idx = findIndex(req.params.no);
+  car_list.splice(idx, 1);
+  // 목록 페이지로 redirect 되도록 한다.
+  res.redirect("/car_list");
+});
+
+// router 패스 설정 맨 아래쪽에 router 미들 웨어 등록 명령이 있어야 한다.
 app.use("/", router);
 const server = http.createServer(app);
 server.listen(3000, () => {
