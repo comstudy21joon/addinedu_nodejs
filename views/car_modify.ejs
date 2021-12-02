@@ -11,7 +11,7 @@
 <body>
     <h2>자동차 정보 수정</h2>
     <form action="/car_modify" method="post">
-        <input type="hidden" name="no" value="<%=car.no%>" />
+        <input type="hidden" name="objId" value="<%=car._id%>" />
         <table border="1" width="300">
             <tr>
                 <th>차종</th>
@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="저장하기" />
+                    <input type="submit" value="수정하기" />
                 </td>
             </tr>
         </table>
